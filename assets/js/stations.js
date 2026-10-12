@@ -65,5 +65,29 @@ window.STATIONS = [
     streamUrl: "https://radio.mp3islam.com/listen/alshuraim/radio.mp3",
     logoUrl: "https://www.google.com/s2/favicons?domain=mp3islam.com&sz=128",
     website: "https://qurangallery.com/listen/fr/radio/radio-saud-al-shuraim"
-  }
+  },
+  
+{
+  id: "france-musique-classique-plus",
+  name: "France Musique Classique Plus",
+  country: "France",
+  language: "Français",
+  genre: "Musique classique et orchestres",
+  streamUrl: "https://icecast.radiofrance.fr/francemusiqueclassiqueplus-midfi.mp3",
+  logoUrl: "https://www.google.com/s2/favicons?domain=radiofrance.fr&sz=128",
+  website: "https://www.radiofrance.fr/francemusique"
+},
+
+{
+  id: "medi-1-classique",
+  name: "Medi 1 Classique",
+  country: "Maroc",
+  language: "Arabe / Français",
+  genre: "Musique classique",
+  streamUrl: "",
+  logoUrl: "https://www.google.com/s2/favicons?domain=medi1.com&sz=128",
+  website: "https://radiohear.com/station/medi-1-classique-ma"
+}
+
+
 ];
