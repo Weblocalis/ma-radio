@@ -10,7 +10,7 @@ const APP_FILES = [
   './',
   './index.html',
   './assets/css/style.css',
-  './assets/js/stations.js',
+/*  './assets/js/stations.js',*/
   './assets/js/app.js',
   './assets/icons/favicon.svg',
   './assets/icons/icon-192.png',
