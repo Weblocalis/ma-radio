@@ -83,7 +83,7 @@ window.STATIONS = [
   country: "Maroc",
   language: "Arabe / Français",
   genre: "Musique classique",
-  streamUrl: "",
+  streamUrl: "http://live.medi1.com/Classique",
   logoUrl: "https://www.google.com/s2/favicons?domain=medi1.com&sz=128",
   website: "https://radiohear.com/station/medi-1-classique-ma"
 }
