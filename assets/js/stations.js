@@ -77,7 +77,6 @@ window.STATIONS = [
   logoUrl: "https://www.google.com/s2/favicons?domain=radiofrance.fr&sz=128",
   website: "https://www.radiofrance.fr/francemusique"
 },
-
 {
   id: "medi-1-classique",
   name: "Medi 1 Classique",
@@ -88,6 +87,4 @@ window.STATIONS = [
   logoUrl: "https://www.google.com/s2/favicons?domain=medi1.com&sz=128",
   website: "https://radiohear.com/station/medi-1-classique-ma"
 }
-
-
 ];
