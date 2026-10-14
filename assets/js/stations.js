@@ -83,8 +83,31 @@ window.STATIONS = [
   country: "Maroc",
   language: "Arabe / Français",
   genre: "Musique classique",
-  streamUrl: "http://live.medi1.com/Classique",
+  streamUrl: "https://www.medi1.com/fr/webradio/Classique",
   logoUrl: "https://www.google.com/s2/favicons?domain=medi1.com&sz=128",
   website: "https://radiohear.com/station/medi-1-classique-ma"
+},
+
+{
+  id: "medi-1-tarab",
+  name: "Medi 1 — Tarab",
+  country: "Maroc",
+  language: "Arabe",
+  genre: "Tarab arabe classique",
+  streamUrl: "https://live.medi1.com/Tarab",
+  logoUrl: "https://www.google.com/s2/favicons?domain=medi1.com&sz=128",
+  website: "https://www.medi1.com/fr/webradio/Tarab"
+},
+
+{
+  id: "hotmix-sport-workout",
+  name: "Hotmix Sport Workout",
+  country: "France",
+  language: "Instrumental / International",
+  genre: "Sport, fitness et musique énergique",
+  streamUrl: "https://streaming.hotmixradio.com/hotmix-sport-plus-en-mp3",
+  logoUrl: "https://www.google.com/s2/favicons?domain=hotmixradio.com&sz=128",
+  website: "https://www.hotmixradio.com/"
 }
 ];
+
