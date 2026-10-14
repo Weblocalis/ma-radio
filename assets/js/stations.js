@@ -46,16 +46,7 @@ window.STATIONS = [
     logoUrl: "https://www.google.com/s2/favicons?domain=medinafm.ma&sz=128",
     website: "https://medinafm.ma/"
   },
-  {
-    id: "adwaa-fm",
-    name: "Adwaa FM",
-    country: "Maroc",
-    language: "Arabe",
-    genre: "Musique arabe",
-    streamUrl: "https://stream.zeno.fm/tvxvud2kpm0uv",
-    logoUrl: "https://www.google.com/s2/favicons?domain=adwaafm.com&sz=128",
-    website: "https://adwaafm.com/fr/radio-adwaa-fm/"
-  },
+  
   {
     id: "quran-shuraim",
     name: "Coran — Saoud Al-Shuraim",
@@ -76,17 +67,6 @@ window.STATIONS = [
   streamUrl: "https://icecast.radiofrance.fr/francemusiqueclassiqueplus-midfi.mp3",
   logoUrl: "https://www.google.com/s2/favicons?domain=radiofrance.fr&sz=128",
   website: "https://www.radiofrance.fr/francemusique"
-},
-
-{
-  id: "medi-1-tarab",
-  name: "Medi 1 — Tarab",
-  country: "Maroc",
-  language: "Arabe",
-  genre: "Tarab arabe classique",
-  streamUrl: "https://live.medi1.com/Tarab",
-  logoUrl: "https://www.google.com/s2/favicons?domain=medi1.com&sz=128",
-  website: "https://www.medi1.com/fr/webradio/Tarab"
 },
 
 {
