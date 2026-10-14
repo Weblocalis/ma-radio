@@ -78,6 +78,17 @@ window.STATIONS = [
   streamUrl: "https://streaming.hotmixradio.com/hotmix-sport-plus-en-mp3",
   logoUrl: "https://www.google.com/s2/favicons?domain=hotmixradio.com&sz=128",
   website: "https://www.hotmixradio.com/"
+},
+
+{ 
+id: "france-culture", 
+name: "France Culture", 
+country: "France", 
+language: "Français", 
+genre: "Culture, sciences, philosophie et idées", 
+streamUrl: "https://icecast.radiofrance.fr/franceculture-midfi.mp3?id=openapi", 
+logoUrl: "https://www.google.com/s2/favicons?domain=radiofrance.fr&sz=128", 
+website: "https://www.radiofrance.fr/franceculture" 
 }
 ];
 

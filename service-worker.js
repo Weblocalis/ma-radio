@@ -4,7 +4,7 @@
  * le navigateur les traite normalement. Aucune écoute hors ligne n'est possible.
  * Incrémente CACHE_VERSION si tu ajoutes ou renomme des fichiers de la liste ci-dessous.
  */
-const CACHE_VERSION = 'v10';
+const CACHE_VERSION = 'v11';
 const CACHE_NAME = 'ma-radio-' + CACHE_VERSION;
 const APP_FILES = [
   './',
