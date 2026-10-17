@@ -11,11 +11,15 @@
     last: 'radio.lastStation',
     volume: 'radio.volume',
     muted: 'radio.muted',
-    history: 'radio.history'
+    history: 'radio.history',
+    theme: 'radio.theme'
   };
   const CONNECT_TIMEOUT_MS = 15000;
   const ALL = ''; // valeur « tous » des filtres
   const HISTORY_MAX = 12;
+  // Après une interruption plus longue que ça, le flux en direct est relancé pour rattraper le direct (au lieu de rejouer un tampon périmé).
+  const LIVE_REFRESH_MS = 20000;
+  const THEME_COLOR = { dark: '#0f1216', light: '#f4f6f9' };    // couleur de la barre du navigateur
 
   /* ---------- Thèmes d'écoute et familles de genres (page d'accueil) ----------
    * Rien n'est recopié depuis le catalogue : les stations de stations.js sont classées d'après leur genre et leur nom
@@ -125,6 +129,9 @@
     view: 'home',        // 'home', 'radios' (catalogue) ou 'favorites'
     history: [],
     langLabels: new Map(),
+    theme: 'auto',       // 'light', 'dark' ou 'auto' (suit le système)
+    interrupted: false,  // lecture mise en pause par le système (appel, autre application...), pas par l'utilisateur
+    interruptedAt: 0,
     current: null,
     wantPlay: false,     // l'utilisateur veut écouter (connexion, tampon ou lecture)
     status: 'idle',
@@ -149,6 +156,7 @@
     homeEmpty: $('home-empty'), clearHistory: $('btn-clear-history'),
     recents: $('recents-list'), picks: $('picks-list'), themes: $('themes-list'), genres: $('genres-list'),
     countries: $('countries-list'), languages: $('languages-list'),
+    themeInputs: [...document.querySelectorAll('input[name="theme"]')], themeHint: $('theme-hint'),
     player: $('player'), logo: $('player-logo'), name: $('player-name'),
     dot: $('status-dot'), statusText: $('status-text'), eq: $('player-eq'),
     play: $('btn-play'), retry: $('btn-retry'), mute: $('btn-mute'), volume: $('volume'), volumeValue: $('volume-value')
@@ -697,6 +705,38 @@
     playing: 'Lecture en cours'
   };
 
+  /* ---------- Media Session (notification Android, écran verrouillé, casque) ----------
+   * Utile pour : nom de la station dans la notification et boutons Lecture/Pause traités comme des actions de
+   * l'utilisateur (donc jamais confondus avec une interruption). Ne détecte PAS les appels ni les annonces d'autres applis. */
+  const hasMediaSession = 'mediaSession' in navigator && typeof window.MediaMetadata === 'function';
+  let mediaSessionStation = null;
+
+  function updateMediaSession() {
+    if (!hasMediaSession) return;
+    try {
+      const st = state.current;
+      if (st && mediaSessionStation !== st.id) {
+        const artwork = st.logoUrl
+          ? [{ src: st.logoUrl, sizes: '128x128' }]
+          : [{ src: new URL('assets/icons/icon-512.png', location.href).href, sizes: '512x512', type: 'image/png' }];
+        navigator.mediaSession.metadata = new MediaMetadata({ title: st.name, artist: 'Ma Radio', artwork });
+        mediaSessionStation = st.id;
+      } else if (!st) {
+        navigator.mediaSession.metadata = null;
+        mediaSessionStation = null;
+      }
+      navigator.mediaSession.playbackState = state.wantPlay ? 'playing' : (st ? 'paused' : 'none');
+    } catch (e) { /* Media Session indisponible : sans conséquence */ }
+  }
+
+  function initMediaSession() {
+    if (!hasMediaSession) return;
+    const handle = (action, fn) => { try { navigator.mediaSession.setActionHandler(action, fn); } catch (e) { /* action non prise en charge */ } };
+    handle('play', () => { if (state.current && !state.wantPlay) startPlayback(); });
+    handle('pause', () => { if (state.current) stopPlayback(); });
+    handle('stop', () => { if (state.current) stopPlayback(); });
+  }
+
   function setStatus(kind, message) {
     state.status = kind;
     el.dot.className = 'status-dot status-' + kind;
@@ -708,6 +748,7 @@
     el.play.disabled = !state.current;
     el.navCurrent.disabled = !state.current;
     el.retry.classList.toggle('d-none', !state.current || kind === 'idle' || kind === 'ready');
+    updateMediaSession();
     paintCardStates();
   }
 
@@ -737,6 +778,7 @@
   /** Coupe le flux et libère la connexion réseau (indispensable pour un flux en direct). */
   function releaseAudio() {
     clearConnectTimer();
+    state.interrupted = false;      // plus de source : aucune reprise automatique possible après un arrêt voulu
     playToken++;
     audio.pause();
     audio.removeAttribute('src');
@@ -811,6 +853,12 @@
 
   /* Événements de l'élément Audio */
   audio.addEventListener('playing', () => {
+    if (state.interrupted) {                 // Chrome a repris la lecture après l'interruption (une seule fois)
+      const away = Date.now() - state.interruptedAt;
+      state.interrupted = false;
+      if (away >= LIVE_REFRESH_MS) { startPlayback(); return; }   // longue interruption : on se recale sur le direct
+      state.wantPlay = true;
+    }
     if (!state.wantPlay) return;
     clearConnectTimer();
     if (state.current && state.history[0] !== state.current.id) recordListen(state.current.id);
@@ -833,8 +881,15 @@
     setStatus('error', 'Le flux s’est arrêté. Appuie sur Relancer.');
   });
   audio.addEventListener('pause', () => {
-    // pause externe (casque, notification système) : on libère le flux, la reprise se fait en relançant
-    if (audio.paused && state.wantPlay && audio.getAttribute('src')) stopPlayback();
+    // Nos boutons retirent la source avant que cet événement n'arrive : ils ne passent jamais ici.
+    // Une pause avec source conservée vient donc du système (appel, autre appli qui prend le focus audio...).
+    // On garde le flux : Chrome Android reprend de lui-même quand l'autre appli rend le focus, et le bouton Lecture relance si besoin.
+    if (!audio.paused || !state.wantPlay || !audio.getAttribute('src')) return;
+    clearConnectTimer();
+    state.wantPlay = false;
+    state.interrupted = true;
+    state.interruptedAt = Date.now();
+    setStatus('interrupted', 'Interrompu (appel ou autre application)');
   });
   window.addEventListener('offline', () => {
     if (state.wantPlay) setStatus('error', 'Connexion Internet perdue.');
@@ -844,6 +899,30 @@
       setStatus('error', 'Connexion rétablie. Appuie sur Relancer.');
     }
   });
+
+  /* ---------- Thème clair / sombre / automatique ---------- */
+  const systemDark = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
+
+  function resolveTheme(pref) {
+    return pref === 'dark' || (pref === 'auto' && !!systemDark && systemDark.matches) ? 'dark' : 'light';
+  }
+
+  function applyTheme() {
+    const resolved = resolveTheme(state.theme);
+    document.documentElement.setAttribute('data-bs-theme', resolved);
+    const meta = document.querySelector('meta[name="theme-color"]');
+    if (meta) meta.setAttribute('content', THEME_COLOR[resolved]);
+    el.themeInputs.forEach((input) => { input.checked = input.value === state.theme; });
+    el.themeHint.textContent = state.theme === 'auto'
+      ? 'Suit le thème du système (actuellement ' + (resolved === 'dark' ? 'sombre' : 'clair') + ').' : '';
+  }
+
+  function setTheme(pref) {
+    if (pref !== 'light' && pref !== 'dark' && pref !== 'auto') return;
+    state.theme = pref;
+    if (!store.set(KEYS.theme, pref)) showStorageWarning();
+    applyTheme();
+  }
 
   /* ---------- Volume ---------- */
   function applyVolume() {
@@ -907,6 +986,13 @@
     if (view !== state.view) applyView(view, true);
   });
 
+  el.themeInputs.forEach((input) => input.addEventListener('change', () => { if (input.checked) setTheme(input.value); }));
+  if (systemDark) {
+    const onSystemChange = () => { if (state.theme === 'auto') applyTheme(); };   // le choix explicite n'est jamais écrasé
+    if (systemDark.addEventListener) systemDark.addEventListener('change', onSystemChange);
+    else if (systemDark.addListener) systemDark.addListener(onSystemChange);
+  }
+
   el.play.addEventListener('click', togglePlay);
   el.retry.addEventListener('click', startPlayback);
   el.mute.addEventListener('click', () => {
@@ -923,6 +1009,11 @@
 
   /* ---------- Initialisation ---------- */
   function init() {
+    const savedTheme = store.get(KEYS.theme, 'auto');
+    state.theme = savedTheme === 'light' || savedTheme === 'dark' ? savedTheme : 'auto';
+    applyTheme();
+    initMediaSession();
+
     const raw = Array.isArray(window.STATIONS) ? window.STATIONS : [];
     raw.forEach((r) => {
       const st = normalizeStation(r);

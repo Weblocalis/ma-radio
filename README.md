@@ -63,11 +63,33 @@ Où trouver l'URL d'un flux ? Sur la page « écouter en direct » de la radio (
 - La vue active est dans l'adresse (`#accueil`, `#radios`, `#favoris`) : bouton Retour d'Android et actualisation fonctionnent. Le lecteur et son unique objet Audio sont hors des vues : naviguer ne coupe jamais la lecture.
 - Si le stockage du navigateur est bloqué, un avertissement s'affiche : favoris et historique fonctionnent pendant la session mais ne sont pas conservés.
 
+## Interruptions audio (appels, WhatsApp, GPS)
+
+Ce qu'une page web peut faire, et ce qu'elle ne peut pas faire :
+
+- **Chrome Android gère le « focus audio » lui-même.** Quand une autre application prend le focus audio, Chrome met la lecture en pause ou baisse son volume de sa propre initiative, puis la reprend ou la rétablit quand le focus est rendu. La page n'est pas prévenue de ces décisions, sauf par les événements `pause` et `playing` de l'élément audio.
+- **Aucune API disponible sur Chrome Android ne signale un appel, un message vocal WhatsApp ou une annonce GPS.** L'Audio Session API (`navigator.audioSession`, état « interrupted ») n'existe aujourd'hui que dans Safari, pas dans Chrome ni Chrome Android. Masquer la page (`visibilitychange`) n'a aucun rapport avec une annonce vocale : Ma Radio ne s'en sert pas.
+- **Pas de baisse de volume « maison ».** Une page ne peut ni détecter une annonce de navigation ni demander de baisser le son. Si une application demande un focus « baisser le volume », c'est Chrome qui applique la baisse, sans toucher au curseur de Ma Radio. Ajouter une baisse en JavaScript se cumulerait avec celle de Chrome, c'est pourquoi elle n'est pas faite. Le volume choisi n'est jamais modifié par ces situations.
+- **Ce que Ma Radio fait désormais :**
+  - Une pause qui ne vient pas d'un de ses boutons est traitée comme une interruption : le flux est conservé (état « Interrompu »), pour que la reprise par Chrome puisse avoir lieu. Avant, le flux était coupé et la reprise automatique était impossible.
+  - À la reprise, si l'interruption a duré moins de 20 secondes, la lecture continue ; sinon le flux est relancé pour revenir au direct. Une seule reprise est prise en compte et il n'y a toujours qu'un seul objet Audio.
+  - Une pause volontaire (bouton, notification, casque) libère le flux : aucune reprise automatique n'est alors possible.
+  - **Media Session** : la notification Android affiche le nom de la station avec Lecture/Pause (les boutons de la notification, du casque ou de l'écran verrouillé sont traités comme des actions volontaires).
+- **Reste hors de portée d'une PWA :** savoir pourquoi la lecture s'est arrêtée, choisir entre pause et baisse de volume selon l'application, ou demander un focus audio précis. Cela exige une application Android native (AudioManager / `AudioFocusRequest`). Le projet n'est pas transformé en application native.
+- Si, sur ton téléphone, la radio ne reprend pas seule après un appel ou un message vocal, c'est que Chrome n'a pas repris : le bouton Lecture (ou celui de la notification) relance le flux.
+
+## Thème clair / sombre / automatique
+
+- Réglage dans **Paramètres** (engrenage en haut à droite) : Clair, Sombre ou Auto. Auto est le choix par défaut et suit le thème d'Android ou du navigateur, y compris quand il change pendant l'utilisation. Un choix explicite n'est jamais modifié par le système.
+- Le choix est enregistré dans `localStorage` (clé `radio.theme` : `light`, `dark` ou `auto`). Un petit script dans l'en-tête de `index.html` pose `data-bs-theme` avant le premier affichage, sans flash. Les couleurs sont des variables CSS (`:root` pour le sombre, `[data-bs-theme="light"]` pour le clair) dans `assets/css/style.css`.
+- Contrastes calculés (WCAG) dans les deux thèmes : textes courants, textes secondaires, accent, bouton principal, badges et avertissements au-dessus du seuil de lisibilité (4,5:1 pour le texte, 3:1 pour les icônes).
+- Limite : l'écran de démarrage de la PWA installée utilise les couleurs fixes de `manifest.webmanifest` (fond sombre), même en thème clair.
+
 ## Ce qui a été testé
 
-- Syntaxe JavaScript (`node --check`), identifiants HTML uniques, icônes Bootstrap Icons vérifiées dans le paquet 1.11.3, empreintes SRI recalculées depuis les paquets npm officiels.
-- Logique dans jsdom avec un élément audio simulé : 63 vérifications héritées (favoris, persistance, navigation sans toucher à l'audio, cas limites de stockage et de catalogue, erreurs de flux, volume/muet) + 44 pour l'accueil (cards non vides seulement, comptes, pays/langues/genres/activités générés depuis le catalogue réel de 7 stations et un catalogue élargi, langues vs instrumental, filtres combinés, pastilles, retour accueil, recherche depuis l'accueil, historique, cœurs synchronisés entre sections, sélection du jour déterministe, catalogue vide ou absent, stockage indisponible).
-- **Non testé** : lecture réelle des flux, rendu visuel et ergonomie sur téléphone et ordinateur (aucun navigateur n'a affiché la page), drapeaux, bouton Retour d'Android, installation PWA, service worker dans un vrai navigateur.
+- Syntaxe JavaScript (`node --check`), identifiants HTML uniques, icônes Bootstrap Icons vérifiées dans le paquet 1.11.3, empreintes SRI recalculées depuis les paquets npm officiels, contrastes calculés.
+- Dans jsdom, avec un élément audio, une Media Session et `matchMedia` **simulés** (aucun appel, WhatsApp ni GPS réel) : 63 vérifications de non-régression (favoris, navigation, lecteur, cas limites), 44 pour l'accueil, 43 pour les interruptions et le thème. Elles couvrent : pause système puis reprise avec ou sans relance du flux, absence de reprise après une pause volontaire, absence de double reprise, un seul objet Audio, volume inchangé, actions Media Session, changement de station pendant une interruption, thème auto/clair/sombre, persistance, changement de thème système, valeur invalide, stockage indisponible.
+- **Non testé dans un vrai navigateur ni sur Android** : tout ce qui précède reste une simulation d'événements. Restent à vérifier sur le téléphone : reprise après un appel réel, comportement avec WhatsApp et le GPS, notification Media Session, rendu des deux thèmes, flash au démarrage, installation PWA, service worker.
 
 ## Limitations connues
 

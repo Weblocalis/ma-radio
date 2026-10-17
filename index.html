@@ -6,6 +6,17 @@
   <title>Ma Radio</title>
   <meta name="description" content="Lecteur radio Internet personnel : écoute tes stations préférées depuis ton téléphone, ta tablette ou ton ordinateur.">
   <meta name="theme-color" content="#0f1216">
+  <script>
+    /* Applique le thème AVANT le premier affichage (évite le flash du mauvais thème). Même logique que app.js. */
+    (function () {
+      var pref = 'auto';
+      try { var v = JSON.parse(localStorage.getItem('radio.theme')); if (v === 'light' || v === 'dark') pref = v; } catch (e) { /* stockage bloqué */ }
+      var dark = pref === 'dark' || (pref === 'auto' && window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches);
+      document.documentElement.setAttribute('data-bs-theme', dark ? 'dark' : 'light');
+      var m = document.querySelector('meta[name="theme-color"]');
+      if (m) m.setAttribute('content', dark ? '#0f1216' : '#f4f6f9');
+    })();
+  </script>
 
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
@@ -35,8 +46,11 @@
           <input type="search" id="search" class="form-control" placeholder="Rechercher une station"
                  aria-label="Rechercher une station par son nom" autocomplete="off">
         </div>
-        <a id="header-fav" href="#favoris" class="btn btn-outline-warning btn-icon order-2 order-md-3 ms-auto ms-md-0"
+        <a id="header-fav" href="#favoris" class="btn btn-outline-secondary btn-icon order-2 order-md-3 ms-auto ms-md-0"
            aria-label="Mes favoris" title="Mes favoris"><i class="bi bi-heart" aria-hidden="true"></i></a>
+        <button id="btn-settings" type="button" class="btn btn-outline-secondary btn-icon order-2 order-md-4"
+                data-bs-toggle="offcanvas" data-bs-target="#settings-panel" aria-controls="settings-panel"
+                aria-label="Paramètres" title="Paramètres"><i class="bi bi-gear" aria-hidden="true"></i></button>
       </div>
     </div>
   </header>
@@ -163,7 +177,7 @@
             <span id="player-eq" class="eq" aria-hidden="true"><span></span><span></span><span></span></span>
           </div>
         </div>
-        <button id="btn-retry" type="button" class="btn btn-outline-light btn-icon d-none"
+        <button id="btn-retry" type="button" class="btn btn-outline-secondary btn-icon d-none"
                 title="Relancer le flux" aria-label="Relancer le flux">
           <i class="bi bi-arrow-clockwise" aria-hidden="true"></i>
         </button>
@@ -172,7 +186,7 @@
         </button>
       </div>
       <div class="d-flex align-items-center gap-2 mt-2">
-        <button id="btn-mute" type="button" class="btn btn-icon text-light" aria-label="Couper le son" aria-pressed="false">
+        <button id="btn-mute" type="button" class="btn btn-icon text-body" aria-label="Couper le son" aria-pressed="false">
           <i class="bi bi-volume-up-fill" aria-hidden="true"></i>
         </button>
         <input id="volume" type="range" class="form-range" min="0" max="100" step="1" value="80" aria-label="Volume">
@@ -197,6 +211,28 @@
       </nav>
     </div>
   </section>
+
+  <!-- Paramètres (volet du bas, accessible au pouce) -->
+  <div class="offcanvas offcanvas-bottom settings-panel" tabindex="-1" id="settings-panel" aria-labelledby="settings-title">
+    <div class="offcanvas-header">
+      <h2 class="offcanvas-title h5" id="settings-title">Paramètres</h2>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Fermer"></button>
+    </div>
+    <div class="offcanvas-body">
+      <fieldset>
+        <legend class="h6">Thème</legend>
+        <div class="btn-group w-100" role="group" aria-label="Thème de l'interface">
+          <input type="radio" class="btn-check" name="theme" id="theme-light" value="light" autocomplete="off">
+          <label class="btn btn-outline-secondary btn-touch d-flex align-items-center justify-content-center gap-1" for="theme-light"><i class="bi bi-sun" aria-hidden="true"></i> Clair</label>
+          <input type="radio" class="btn-check" name="theme" id="theme-dark" value="dark" autocomplete="off">
+          <label class="btn btn-outline-secondary btn-touch d-flex align-items-center justify-content-center gap-1" for="theme-dark"><i class="bi bi-moon-stars" aria-hidden="true"></i> Sombre</label>
+          <input type="radio" class="btn-check" name="theme" id="theme-auto" value="auto" autocomplete="off">
+          <label class="btn btn-outline-secondary btn-touch d-flex align-items-center justify-content-center gap-1" for="theme-auto"><i class="bi bi-circle-half" aria-hidden="true"></i> Auto</label>
+        </div>
+        <p id="theme-hint" class="small text-muted-ui mt-2 mb-0" aria-live="polite"></p>
+      </fieldset>
+    </div>
+  </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
           integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
