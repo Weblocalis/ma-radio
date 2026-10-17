@@ -91,97 +91,7 @@ logoUrl: "https://www.google.com/s2/favicons?domain=radiofrance.fr&sz=128",
 website: "https://www.radiofrance.fr/franceculture" 
 },
 
-  // ===== Niveau A : URL listée sur la page officielle du diffuseur =====
-  {
-    id: "somafm-groove-salad",
-    name: "Groove Salad (SomaFM)",
-    country: "États-Unis",
-    language: "Mixte (voix possibles)",
-    genre: "Downtempo et chill",
-    streamUrl: "https://ice.somafm.com/groovesalad",
-    logoUrl: "https://www.google.com/s2/favicons?domain=somafm.com&sz=128",
-    website: "https://somafm.com/"
-  },
-  {
-    id: "somafm-drone-zone",
-    name: "Drone Zone (SomaFM)",
-    country: "États-Unis",
-    language: "Instrumental",
-    genre: "Ambient et concentration",
-    streamUrl: "https://ice.somafm.com/dronezone",
-    logoUrl: "https://www.google.com/s2/favicons?domain=somafm.com&sz=128",
-    website: "https://somafm.com/"
-  },
-  {
-    id: "somafm-deep-space-one",
-    name: "Deep Space One (SomaFM)",
-    country: "États-Unis",
-    language: "Instrumental",
-    genre: "Ambient et concentration",
-    streamUrl: "https://ice.somafm.com/deepspaceone",
-    logoUrl: "https://www.google.com/s2/favicons?domain=somafm.com&sz=128",
-    website: "https://somafm.com/"
-  },
-  {
-    id: "somafm-space-station",
-    name: "Space Station Soma (SomaFM)",
-    country: "États-Unis",
-    language: "Mixte (voix possibles)",
-    genre: "Ambient et concentration",
-    streamUrl: "https://ice.somafm.com/spacestation",
-    logoUrl: "https://www.google.com/s2/favicons?domain=somafm.com&sz=128",
-    website: "https://somafm.com/"
-  },
-  {
-    id: "somafm-synphaera",
-    name: "Synphaera Radio (SomaFM)",
-    country: "États-Unis",
-    language: "Instrumental",
-    genre: "Ambient et concentration",
-    streamUrl: "https://ice.somafm.com/synphaera",
-    logoUrl: "https://www.google.com/s2/favicons?domain=somafm.com&sz=128",
-    website: "https://somafm.com/"
-  },
-  {
-    id: "somafm-fluid",
-    name: "Fluid (SomaFM)",
-    country: "États-Unis",
-    language: "Instrumental",
-    genre: "Lo-fi et chillhop",
-    streamUrl: "https://ice.somafm.com/fluid",
-    logoUrl: "https://www.google.com/s2/favicons?domain=somafm.com&sz=128",
-    website: "https://somafm.com/"
-  },
-  {
-    id: "somafm-cliqhop",
-    name: "cliqhop idm (SomaFM)",
-    country: "États-Unis",
-    language: "Instrumental",
-    genre: "Électronique et IDM",
-    streamUrl: "https://ice.somafm.com/cliqhop",
-    logoUrl: "https://www.google.com/s2/favicons?domain=somafm.com&sz=128",
-    website: "https://somafm.com/"
-  },
-  {
-    id: "somafm-defcon",
-    name: "Defcon Radio (SomaFM)",
-    country: "États-Unis",
-    language: "Mixte (voix possibles)",
-    genre: "Hacking et culture informatique",
-    streamUrl: "https://ice.somafm.com/defcon",
-    logoUrl: "https://www.google.com/s2/favicons?domain=somafm.com&sz=128",
-    website: "https://somafm.com/"
-  },
-  {
-    id: "somafm-vaporwaves",
-    name: "Vaporwaves (SomaFM)",
-    country: "États-Unis",
-    language: "Mixte (voix possibles)",
-    genre: "Synthwave et cyberpunk",
-    streamUrl: "https://ice.somafm.com/vaporwaves",
-    logoUrl: "https://www.google.com/s2/favicons?domain=somafm.com&sz=128",
-    website: "https://somafm.com/"
-  },
+
   {
     id: "nightride-fm",
     name: "Nightride FM",
@@ -222,8 +132,6 @@ website: "https://www.radiofrance.fr/franceculture"
     logoUrl: "https://www.google.com/s2/favicons?domain=nightride.fm&sz=128",
     website: "https://nightride.fm/"
   },
-
-  // ===== Niveau B : source documentaire, à tester en priorité =====
   {
     id: "code-radio",
     name: "Code Radio (freeCodeCamp)",
@@ -234,16 +142,7 @@ website: "https://www.radiofrance.fr/franceculture"
     logoUrl: "https://www.google.com/s2/favicons?domain=freecodecamp.org&sz=128",
     website: "https://coderadio.freecodecamp.org/"
   },
-  {
-    id: "fip-electro",
-    name: "FIP Electro",
-    country: "France",
-    language: "Mixte (voix possibles)",
-    genre: "Électronique et IDM",
-    streamUrl: "https://icecast.radiofrance.fr/fipelectro-midfi.mp3?id=radiofrance",
-    logoUrl: "https://www.google.com/s2/favicons?domain=radiofrance.fr&sz=128",
-    website: "https://www.radiofrance.fr/fip"
-  },
+  
   {
     id: "radio-swiss-classic",
     name: "Radio Swiss Classic",
