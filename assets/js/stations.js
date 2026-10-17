@@ -65,7 +65,7 @@ window.STATIONS = [
   language: "Français",
   genre: "Musique classique et orchestres",
   streamUrl: "https://icecast.radiofrance.fr/francemusiqueclassiqueplus-midfi.mp3",
-  logoUrl: "https://www.google.com/s2/favicons?domain=radiofrance.fr&sz=128",
+  logoUrl: "https://www.google.com/s2/favicons?domain=www.radiofrance.fr/francemusique&sz=128",
   website: "https://www.radiofrance.fr/francemusique"
 },
 
@@ -76,7 +76,7 @@ window.STATIONS = [
   language: "Instrumental / International",
   genre: "Sport, fitness et musique énergique",
   streamUrl: "https://streaming.hotmixradio.com/hotmix-sport-plus-en-mp3",
-  logoUrl: "https://www.google.com/s2/favicons?domain=hotmixradio.com&sz=128",
+  logoUrl: "https://www.google.com/s2/favicons?domain=www.hotmixradio.com&sz=128",
   website: "https://www.hotmixradio.com/"
 },
 
@@ -87,7 +87,7 @@ country: "France",
 language: "Français", 
 genre: "Culture, sciences, philosophie et idées", 
 streamUrl: "https://icecast.radiofrance.fr/franceculture-midfi.mp3?id=openapi", 
-logoUrl: "https://www.google.com/s2/favicons?domain=radiofrance.fr&sz=128", 
+logoUrl: "https://www.google.com/s2/favicons?domain=radiofrance.fr/franceculture&sz=128", 
 website: "https://www.radiofrance.fr/franceculture" 
 },
 {
@@ -97,7 +97,7 @@ website: "https://www.radiofrance.fr/franceculture"
   language: "Français",
   genre: "Actualités, Culture, Débats",
   streamUrl: "https://icecast.radiofrance.fr/franceinter-midfi.mp3?id=openapi",
-  logoUrl: "https://www.radiofrance.fr/favicon.ico",
+  logoUrl: "https://www.google.com/s2/favicons?domain=www.radiofrance.fr/franceinter&sz=128",
   website: "https://www.radiofrance.fr/franceinter"
 },
 {
@@ -107,17 +107,17 @@ website: "https://www.radiofrance.fr/franceculture"
   language: "Français",
   genre: "Généraliste, Actualités, Divertissement",
   streamUrl: "https://streaming.radio.rtl.fr/rtl-1-44-96",
-  logoUrl: "https://www.rtl.fr/favicon.ico",
+  logoUrl: "https://www.google.com/s2/favicons?domain=www.rtl.fr&sz=128",
   website: "https://www.rtl.fr/direct"
 },
 {
   id: "franceinfo",
-  name: "franceinfo",
+  name: "Franceinfo",
   country: "France",
   language: "Français",
   genre: "Actualités, Information",
   streamUrl: "https://icecast.radiofrance.fr/franceinfo-midfi.mp3?id=openapi",
-  logoUrl: "https://www.radiofrance.fr/favicon.ico",
+  logoUrl: "https://www.google.com/s2/favicons?domain=www.radiofrance.fr/franceinfo&sz=128",
   website: "https://www.radiofrance.fr/franceinfo"
 },
 {
@@ -126,8 +126,8 @@ website: "https://www.radiofrance.fr/franceculture"
   country: "France",
   language: "Français",
   genre: "Pop, Hits, Dance",
-  streamUrl: "https://streaming.nrjaudio.fm/ou5k6tirv93h",
-  logoUrl: "https://www.nrj.fr/favicon.ico",
+  streamUrl: "https://streaming.nrjaudio.fm/oufdfatx4thg",
+  logoUrl: "https://www.google.com/s2/favicons?domain=www.nrj.fr&sz=128",
   website: "https://www.nrj.fr/"
 },
 {
@@ -137,7 +137,7 @@ website: "https://www.radiofrance.fr/franceculture"
   language: "Instrumental",
   genre: "Éclectique, Jazz, Rock, Classique, Musiques du monde",
   streamUrl: "https://icecast.radiofrance.fr/fip-midfi.mp3",
-  logoUrl: "https://www.radiofrance.fr/favicon.ico",
+  logoUrl: "https://www.google.com/s2/favicons?domain=www.radiofrance.fr/fip&sz=128",
   website: "https://www.radiofrance.fr/fip"
 },
 
@@ -202,45 +202,14 @@ website: "https://www.radiofrance.fr/franceculture"
     logoUrl: "https://www.google.com/s2/favicons?domain=radioswissclassic.ch&sz=128",
     website: "https://radioswissclassic.ch/"
   },
-  
-  {
-  id: "bbc-radio-1",
-  name: "BBC Radio 1",
-  country: "United Kingdom",
-  language: "English",
-  genre: "Pop, New Music, Contemporary",
-  streamUrl: "https://stream.live.vc.bbcmedia.co.uk/bbc_radio_one",
-  logoUrl: "https://www.bbc.co.uk/favicon.ico",
-  website: "https://www.bbc.co.uk/sounds/play/live/bbc_radio_one"
-},
-{
-  id: "bbc-radio-2",
-  name: "BBC Radio 2",
-  country: "United Kingdom",
-  language: "English",
-  genre: "Pop, Adult Contemporary, Entertainment",
-  streamUrl: "https://stream.live.vc.bbcmedia.co.uk/bbc_radio_two",
-  logoUrl: "https://www.bbc.co.uk/favicon.ico",
-  website: "https://www.bbc.co.uk/sounds/play/live/bbc_radio_two"
-},
-{
-  id: "bbc-radio-3",
-  name: "BBC Radio 3",
-  country: "United Kingdom",
-  language: "English",
-  genre: "Classical, Opera, Concerts",
-  streamUrl: "https://stream.live.vc.bbcmedia.co.uk/bbc_radio_three",
-  logoUrl: "https://www.bbc.co.uk/favicon.ico",
-  website: "https://www.bbc.co.uk/sounds/play/live/bbc_radio_three"
-},
 {
   id: "bbc-world-service",
-  name: "BBC World Service",
+  name: "BBC Radio World Service",
   country: "United Kingdom",
   language: "English",
   genre: "International News, Current Affairs",
   streamUrl: "https://stream.live.vc.bbcmedia.co.uk/bbc_world_service",
-  logoUrl: "https://www.bbc.co.uk/favicon.ico",
+  logoUrl: "https://www.google.com/s2/favicons?domain=www.bbc.co.uk/sounds/play/live/bbc_world_service&sz=128",
   website: "https://www.bbc.co.uk/sounds/play/live/bbc_world_service"
 },
 {
@@ -250,7 +219,7 @@ website: "https://www.radiofrance.fr/franceculture"
   language: "English",
   genre: "Classical, Film Scores, Orchestral",
   streamUrl: "https://media-ssl.musicradio.com/ClassicFM",
-  logoUrl: "https://www.classicfm.com/favicon.ico",
+  logoUrl: "https://www.google.com/s2/favicons?domain=www.globalplayer.com/live/classicfm/&sz=128",
   website: "https://www.globalplayer.com/live/classicfm/"
 },
 {
@@ -260,7 +229,7 @@ website: "https://www.radiofrance.fr/franceculture"
   language: "English",
   genre: "Alternative Rock, Indie, Music Discovery",
   streamUrl: "https://kexp.streamguys1.com/kexp160.aac",
-  logoUrl: "https://kexp.org/favicon.ico",
+  logoUrl: "https://www.google.com/s2/favicons?domain=kexp.org&sz=128",
   website: "https://kexp.org/"
 },
 {
@@ -270,7 +239,7 @@ website: "https://www.radiofrance.fr/franceculture"
   language: "English",
   genre: "Rock, Pop, Eclectic, Album Music",
   streamUrl: "https://stream.radioparadise.com/mp3-128",
-  logoUrl: "https://radioparadise.com/favicon.ico",
+  logoUrl: "https://www.google.com/s2/favicons?domain=radioparadise.com&sz=128",
   website: "https://radioparadise.com/"
 },
 {
@@ -280,7 +249,7 @@ website: "https://www.radiofrance.fr/franceculture"
   language: "Allemand",
   genre: "Actualités, Analyses, Débats",
   streamUrl: "https://st01.sslstream.dlf.de/dlf/01/128/mp3/stream.mp3",
-  logoUrl: "https://www.deutschlandfunk.de/favicon.ico",
+  logoUrl: "https://www.google.com/s2/favicons?domain=www.deutschlandfunk.de&sz=128",
   website: "https://www.deutschlandfunk.de/"
 },
 {
@@ -290,7 +259,7 @@ website: "https://www.radiofrance.fr/franceculture"
   language: "Principalement musicale",
   genre: "Musique classique, Instrumental, Détente",
   streamUrl: "https://stream.srg-ssr.ch/srgssr/rsc_de/mp3/128",
-  logoUrl: "https://www.radioswissclassic.ch/favicon.ico",
+  logoUrl: "https://www.google.com/s2/favicons?domain=www.radioswissclassic.ch&sz=128",
   website: "https://www.radioswissclassic.ch/"
 },
 {
@@ -349,8 +318,8 @@ website: "https://www.radiofrance.fr/franceculture"
   country: "Allemagne",
   language: "Allemand",
   genre: "Culture, arts, débats, musique",
-  streamUrl: "",
-  logoUrl: "",
+  streamUrl: "https://st02.sslstream.dlf.de/dlf/02/128/mp3/stream.mp3",
+  logoUrl: "https://www.google.com/s2/favicons?domain=www.deutschlandfunkkultur.de&sz=128",
   website: "https://www.deutschlandfunkkultur.de/"
 },
 {
@@ -359,8 +328,8 @@ website: "https://www.radiofrance.fr/franceculture"
   country: "Allemagne",
   language: "Allemand",
   genre: "Pop, hits contemporains",
-  streamUrl: "",
-  logoUrl: "",
+  streamUrl: "https://icecast.ndr.de/ndr/njoy/live/mp3/128/stream.mp3",
+  logoUrl: "https://www.google.com/s2/favicons?domain=www.n-joy.de&sz=128",
   website: "https://www.n-joy.de/"
 },
 {
@@ -369,19 +338,9 @@ website: "https://www.radiofrance.fr/franceculture"
   country: "Italie",
   language: "Italien",
   genre: "Musique populaire, divertissement",
-  streamUrl: "",
-  logoUrl: "",
+  streamUrl: "https://stream.deejay.hr/",
+  logoUrl: "https://www.google.com/s2/favicons?domain=www.deejay.it&sz=128",
   website: "https://www.deejay.it/"
-},
-{
-  id: "rtl-1025-it",
-  name: "RTL 102.5",
-  country: "Italie",
-  language: "Italien",
-  genre: "Hits, émissions, actualités",
-  streamUrl: "",
-  logoUrl: "",
-  website: "https://www.rtl.it/"
 },
 {
   id: "rai-radio-1-it",
@@ -389,8 +348,8 @@ website: "https://www.radiofrance.fr/franceculture"
   country: "Italie",
   language: "Italien",
   genre: "Actualités, sport, généraliste",
-  streamUrl: "",
-  logoUrl: "",
+  streamUrl: "https://radiounoita-live.akamaized.net/hls/live/2032820/radiounoita/radiounoita/playlist.m3u8",
+  logoUrl: "https://www.google.com/s2/favicons?domain=www.raiplaysound.it&sz=128",
   website: "https://www.raiplaysound.it/"
 },
 {
@@ -399,8 +358,8 @@ website: "https://www.radiofrance.fr/franceculture"
   country: "Pays-Bas",
   language: "Néerlandais",
   genre: "Pop, grands classiques",
-  streamUrl: "",
-  logoUrl: "",
+  streamUrl: "https://icecast.omroep.nl/radio2-bb-mp3",
+  logoUrl: "https://www.google.com/s2/favicons?domain=www.nporadio2.nl&sz=128",
   website: "https://www.nporadio2.nl/"
 },
 {
@@ -409,18 +368,18 @@ website: "https://www.radiofrance.fr/franceculture"
   country: "Pays-Bas",
   language: "Néerlandais",
   genre: "Hits, musique populaire",
-  streamUrl: "",
-  logoUrl: "",
+  streamUrl: "https://audio-streaming.qmusic.nl/Qmusic_nl_live_high.aac",
+  logoUrl: "https://www.google.com/s2/favicons?domain=qmusic.nl&sz=128",
   website: "https://qmusic.nl/"
 },
 {
   id: "sveriges-radio-p1-se",
-  name: "Sveriges Radio P1",
+  name: "Sveriges Radio Finska",
   country: "Suède",
   language: "Suédois",
   genre: "Actualités, société, culture",
-  streamUrl: "",
-  logoUrl: "",
+  streamUrl: "https://www.sverigesradio.se/topsy/direkt/srapi/226.mp3",
+  logoUrl: "https://www.google.com/s2/favicons?domain=www.sverigesradio.se&sz=128",
   website: "https://www.sverigesradio.se/"
 },
 {
@@ -429,8 +388,8 @@ website: "https://www.radiofrance.fr/franceculture"
   country: "Norvège",
   language: "Norvégien",
   genre: "Généraliste, actualités",
-  streamUrl: "",
-  logoUrl: "",
+  streamUrl: "https://nrk-live-radio-world.akamaized.net/p1/muxed.m3u8",
+  logoUrl: "https://www.google.com/s2/favicons?domain=radio.nrk.no&sz=128",
   website: "https://radio.nrk.no/"
 },
 
