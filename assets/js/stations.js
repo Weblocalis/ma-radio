@@ -292,5 +292,185 @@ website: "https://www.radiofrance.fr/franceculture"
   streamUrl: "https://stream.srg-ssr.ch/srgssr/rsc_de/mp3/128",
   logoUrl: "https://www.radioswissclassic.ch/favicon.ico",
   website: "https://www.radioswissclassic.ch/"
+},
+{
+  id: "nostalgie-fr",
+  name: "Nostalgie",
+  country: "France",
+  language: "Français",
+  genre: "Variété française, hits rétro",
+  streamUrl: "",
+  logoUrl: "",
+  website: "https://www.nostalgie.fr/"
+},
+{
+  id: "skyrock-fr",
+  name: "Skyrock",
+  country: "France",
+  language: "Français",
+  genre: "Rap, hip-hop",
+  streamUrl: "",
+  logoUrl: "",
+  website: "https://skyrock.fm/"
+},
+{
+  id: "fun-radio-fr",
+  name: "Fun Radio",
+  country: "France",
+  language: "Français",
+  genre: "Dance, électro, hits",
+  streamUrl: "",
+  logoUrl: "",
+  website: "https://www.funradio.fr/"
+},
+{
+  id: "los40-es",
+  name: "LOS40",
+  country: "Espagne",
+  language: "Espagnol",
+  genre: "Pop, hits espagnols et internationaux",
+  streamUrl: "",
+  logoUrl: "",
+  website: "https://los40.com/"
+},
+{
+  id: "cadena-ser-es",
+  name: "Cadena SER",
+  country: "Espagne",
+  language: "Espagnol",
+  genre: "Actualités, débats, sport",
+  streamUrl: "",
+  logoUrl: "",
+  website: "https://cadenaser.com/"
+},
+{
+  id: "cope-es",
+  name: "COPE",
+  country: "Espagne",
+  language: "Espagnol",
+  genre: "Actualités, débats, sport",
+  streamUrl: "",
+  logoUrl: "",
+  website: "https://www.cope.es/"
+},
+{
+  id: "deutschlandfunk-kultur-de",
+  name: "Deutschlandfunk Kultur",
+  country: "Allemagne",
+  language: "Allemand",
+  genre: "Culture, arts, débats, musique",
+  streamUrl: "",
+  logoUrl: "",
+  website: "https://www.deutschlandfunkkultur.de/"
+},
+{
+  id: "n-joy-de",
+  name: "N-JOY",
+  country: "Allemagne",
+  language: "Allemand",
+  genre: "Pop, hits contemporains",
+  streamUrl: "",
+  logoUrl: "",
+  website: "https://www.n-joy.de/"
+},
+{
+  id: "radio-deejay-it",
+  name: "Radio Deejay",
+  country: "Italie",
+  language: "Italien",
+  genre: "Musique populaire, divertissement",
+  streamUrl: "",
+  logoUrl: "",
+  website: "https://www.deejay.it/"
+},
+{
+  id: "rtl-1025-it",
+  name: "RTL 102.5",
+  country: "Italie",
+  language: "Italien",
+  genre: "Hits, émissions, actualités",
+  streamUrl: "",
+  logoUrl: "",
+  website: "https://www.rtl.it/"
+},
+{
+  id: "rai-radio-1-it",
+  name: "Rai Radio 1",
+  country: "Italie",
+  language: "Italien",
+  genre: "Actualités, sport, généraliste",
+  streamUrl: "",
+  logoUrl: "",
+  website: "https://www.raiplaysound.it/"
+},
+{
+  id: "npo-radio-2-nl",
+  name: "NPO Radio 2",
+  country: "Pays-Bas",
+  language: "Néerlandais",
+  genre: "Pop, grands classiques",
+  streamUrl: "",
+  logoUrl: "",
+  website: "https://www.nporadio2.nl/"
+},
+{
+  id: "qmusic-nl",
+  name: "Qmusic",
+  country: "Pays-Bas",
+  language: "Néerlandais",
+  genre: "Hits, musique populaire",
+  streamUrl: "",
+  logoUrl: "",
+  website: "https://qmusic.nl/"
+},
+{
+  id: "sveriges-radio-p1-se",
+  name: "Sveriges Radio P1",
+  country: "Suède",
+  language: "Suédois",
+  genre: "Actualités, société, culture",
+  streamUrl: "",
+  logoUrl: "",
+  website: "https://www.sverigesradio.se/"
+},
+{
+  id: "nrk-p1-no",
+  name: "NRK P1",
+  country: "Norvège",
+  language: "Norvégien",
+  genre: "Généraliste, actualités",
+  streamUrl: "",
+  logoUrl: "",
+  website: "https://radio.nrk.no/"
+},
+{
+  id: "somafm-groove-salad",
+  name: "SomaFM Groove Salad",
+  country: "États-Unis",
+  language: "Instrumental",
+  genre: "Ambient, downtempo, détente",
+  streamUrl: "https://ice2.somafm.com/groovesalad-128-mp3",
+  logoUrl: "https://somafm.com/img3/groovesalad-400.jpg",
+  website: "https://somafm.com/groovesalad/"
+},
+{
+  id: "somafm-drone-zone",
+  name: "SomaFM Drone Zone",
+  country: "États-Unis",
+  language: "Instrumental",
+  genre: "Ambient, atmosphérique, concentration",
+  streamUrl: "https://ice2.somafm.com/dronezone-128-mp3",
+  logoUrl: "https://somafm.com/img3/dronezone-400.jpg",
+  website: "https://somafm.com/dronezone/"
+},
+{
+  id: "somafm-secret-agent",
+  name: "SomaFM Secret Agent",
+  country: "États-Unis",
+  language: "Instrumental",
+  genre: "Bandes originales, espionnage, cinéma",
+  streamUrl: "https://ice2.somafm.com/secretagent-128-mp3",
+  logoUrl: "https://somafm.com/img3/secretagent-400.jpg",
+  website: "https://somafm.com/secretagent/"
 }
 ];
