@@ -58,38 +58,7 @@ window.STATIONS = [
   website: "https://medinafm.ma/"
 },
   
-{
-  id: "france-musique-classique-plus",
-  name: "France Musique Classique Plus",
-  country: "France",
-  language: "Français",
-  genre: "Musique classique et orchestres",
-  streamUrl: "https://icecast.radiofrance.fr/francemusiqueclassiqueplus-midfi.mp3",
-  logoUrl: "https://www.google.com/s2/favicons?domain=www.radiofrance.fr/francemusique&sz=128",
-  website: "https://www.radiofrance.fr/francemusique"
-},
 
-{
-  id: "hotmix-sport-workout",
-  name: "Hotmix Sport Workout",
-  country: "France",
-  language: "",
-  genre: "Sports, Fitness & Energetic Music",
-  streamUrl: "https://streaming.hotmixradio.com/hotmix-sport-plus-en-mp3",
-  logoUrl: "https://www.google.com/s2/favicons?domain=www.hotmixradio.com&sz=128",
-  website: "https://www.hotmixradio.com/"
-},
-
-{ 
-id: "france-culture", 
-name: "France Culture", 
-country: "France", 
-language: "Français", 
-genre: "Culture, sciences, philosophie et idées", 
-streamUrl: "https://icecast.radiofrance.fr/franceculture-midfi.mp3?id=openapi", 
-logoUrl: "https://www.google.com/s2/favicons?domain=radiofrance.fr/franceculture&sz=128", 
-website: "https://www.radiofrance.fr/franceculture" 
-},
 {
   id: "france-inter",
   name: "France Inter",
@@ -181,27 +150,9 @@ website: "https://www.radiofrance.fr/franceculture"
     logoUrl: "https://www.google.com/s2/favicons?domain=nightride.fm&sz=128",
     website: "https://nightride.fm/"
   },
-  {
-    id: "code-radio",
-    name: "Code Radio (freeCodeCamp)",
-    country: "États-Unis",
-    language: "",
-    genre: "Lo-fi et chillhop, Instrumental",
-    streamUrl: "https://coderadio-admin-v2.freecodecamp.org/listen/coderadio/radio.mp3",
-    logoUrl: "https://www.google.com/s2/favicons?domain=freecodecamp.org&sz=128",
-    website: "https://coderadio.freecodecamp.org/"
-  },
   
-  {
-    id: "radio-swiss-classic",
-    name: "Radio Swiss Classic",
-    country: "Suisse",
-    language: "",
-    genre: "Classique, Instrumental",
-    streamUrl: "https://stream.srg-ssr.ch/m/rsc_de/mp3_128",
-    logoUrl: "https://www.google.com/s2/favicons?domain=radioswissclassic.ch&sz=128",
-    website: "https://radioswissclassic.ch/"
-  },
+  
+
 {
   id: "bbc-world-service",
   name: "BBC Radio World Service",
@@ -243,6 +194,16 @@ website: "https://www.radiofrance.fr/franceculture"
   website: "https://radioparadise.com/"
 },
 {
+  id: "code-radio",
+  name: "Code Radio (freeCodeCamp)",
+  country: "United States",
+  language: "",
+  genre: "Lo-fi & Chillhop, Instrumental",
+  streamUrl: "https://coderadio-admin-v2.freecodecamp.org/listen/coderadio/radio.mp3",
+  logoUrl: "https://www.google.com/s2/favicons?domain=freecodecamp.org&sz=128",
+  website: "https://coderadio.freecodecamp.org/"
+},
+{
   id: "deutschlandfunk",
   name: "Deutschlandfunk",
   country: "Germany",
@@ -256,11 +217,51 @@ website: "https://www.radiofrance.fr/franceculture"
   id: "radio-swiss-classic",
   name: "Radio Swiss Classic",
   country: "Switzerland",
+  language: "",
+  genre: "Classical, Instrumental",
+  streamUrl: "https://stream.srg-ssr.ch/m/rsc_de/mp3_128",
+  logoUrl: "https://www.google.com/s2/favicons?domain=radioswissclassic.ch&sz=128",
+  website: "https://radioswissclassic.ch/"
+},
+{
+  id: "radio-swiss-classic",
+  name: "Radio Swiss Classic",
+  country: "Switzerland",
   language: "Mostly Instrumental",
   genre: "Classical Music, Instrumental, Relaxation",
   streamUrl: "https://stream.srg-ssr.ch/srgssr/rsc_de/mp3/128",
   logoUrl: "https://www.google.com/s2/favicons?domain=www.radioswissclassic.ch&sz=128",
   website: "https://www.radioswissclassic.ch/"
+},
+{
+  id: "france-musique-classique-plus",
+  name: "France Musique Classique Plus",
+  country: "France",
+  language: "French",
+  genre: "Classical Music & Orchestras",
+  streamUrl: "https://icecast.radiofrance.fr/francemusiqueclassiqueplus-midfi.mp3",
+  logoUrl: "https://www.google.com/s2/favicons?domain=www.radiofrance.fr/francemusique&sz=128",
+  website: "https://www.radiofrance.fr/francemusique"
+},
+{
+  id: "hotmix-sport-workout",
+  name: "Hotmix Sport Workout",
+  country: "France",
+  language: "",
+  genre: "Sports, Fitness & Energetic Music",
+  streamUrl: "https://streaming.hotmixradio.com/hotmix-sport-plus-en-mp3",
+  logoUrl: "https://www.google.com/s2/favicons?domain=www.hotmixradio.com&sz=128",
+  website: "https://www.hotmixradio.com/"
+},
+{
+  id: "france-culture",
+  name: "France Culture",
+  country: "France",
+  language: "French",
+  genre: "Culture, Science, Philosophy & Ideas",
+  streamUrl: "https://icecast.radiofrance.fr/franceculture-midfi.mp3?id=openapi",
+  logoUrl: "https://www.google.com/s2/favicons?domain=radiofrance.fr/franceculture&sz=128",
+  website: "https://www.radiofrance.fr/franceculture"
 },
 {
   id: "nostalgie-fr",
