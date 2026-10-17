@@ -53,21 +53,21 @@
     "label": "Omnira home screen"
   },
   {
-    "src": "assets/images/screenshot-2.png",
+    "src": "assets/images/screenshot-2.jpg",
     "sizes": "720x1418",
     "type": "image/jpeg",
     "form_factor": "narrow",
     "label": "Browse radio stations"
   },
   {
-    "src": "assets/images/screenshot-3.png",
+    "src": "assets/images/screenshot-3.jpg",
     "sizes": "720x1418",
     "type": "image/jpeg",
     "form_factor": "narrow",
     "label": "Radio stations filtered by activity"
   },
   {
-    "src": "assets/images/screenshot-5.png",
+    "src": "assets/images/screenshot-5.jpg",
     "sizes": "720x1418",
     "type": "image/jpeg",
     "form_factor": "narrow",
