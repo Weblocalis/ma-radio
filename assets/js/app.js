@@ -545,7 +545,7 @@
   }
 
   function renderRecents() {
-    const list = state.history.map((id) => state.byId.get(id)).filter(Boolean).slice(0, 6);
+    const list = state.history.map((id) => state.byId.get(id)).filter(Boolean).slice(0, 3);
     stationCards(list, el.recents);
     paintCardStates();
   }
