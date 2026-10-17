@@ -444,26 +444,6 @@ website: "https://www.radiofrance.fr/franceculture"
   website: "https://radio.nrk.no/"
 },
 {
-  id: "somafm-groove-salad",
-  name: "SomaFM Groove Salad",
-  country: "États-Unis",
-  language: "Instrumental",
-  genre: "Ambient, downtempo, détente",
-  streamUrl: "https://ice2.somafm.com/groovesalad-128-mp3",
-  logoUrl: "https://somafm.com/img3/groovesalad-400.jpg",
-  website: "https://somafm.com/groovesalad/"
-},
-{
-  id: "somafm-drone-zone",
-  name: "SomaFM Drone Zone",
-  country: "États-Unis",
-  language: "Instrumental",
-  genre: "Ambient, atmosphérique, concentration",
-  streamUrl: "https://ice2.somafm.com/dronezone-128-mp3",
-  logoUrl: "https://somafm.com/img3/dronezone-400.jpg",
-  website: "https://somafm.com/dronezone/"
-},
-{
   id: "somafm-secret-agent",
   name: "SomaFM Secret Agent",
   country: "États-Unis",
