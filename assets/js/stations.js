@@ -90,7 +90,56 @@ streamUrl: "https://icecast.radiofrance.fr/franceculture-midfi.mp3?id=openapi",
 logoUrl: "https://www.google.com/s2/favicons?domain=radiofrance.fr&sz=128", 
 website: "https://www.radiofrance.fr/franceculture" 
 },
-
+{
+  id: "france-inter",
+  name: "France Inter",
+  country: "France",
+  language: "Français",
+  genre: "Actualités, Culture, Débats",
+  streamUrl: "https://icecast.radiofrance.fr/franceinter-midfi.mp3?id=openapi",
+  logoUrl: "https://www.radiofrance.fr/favicon.ico",
+  website: "https://www.radiofrance.fr/franceinter"
+},
+{
+  id: "rtl-france",
+  name: "RTL",
+  country: "France",
+  language: "Français",
+  genre: "Généraliste, Actualités, Divertissement",
+  streamUrl: "https://streaming.radio.rtl.fr/rtl-1-44-96",
+  logoUrl: "https://www.rtl.fr/favicon.ico",
+  website: "https://www.rtl.fr/direct"
+},
+{
+  id: "franceinfo",
+  name: "franceinfo",
+  country: "France",
+  language: "Français",
+  genre: "Actualités, Information",
+  streamUrl: "https://icecast.radiofrance.fr/franceinfo-midfi.mp3?id=openapi",
+  logoUrl: "https://www.radiofrance.fr/favicon.ico",
+  website: "https://www.radiofrance.fr/franceinfo"
+},
+{
+  id: "nrj-france",
+  name: "NRJ",
+  country: "France",
+  language: "Français",
+  genre: "Pop, Hits, Dance",
+  streamUrl: "https://streaming.nrjaudio.fm/ou5k6tirv93h",
+  logoUrl: "https://www.nrj.fr/favicon.ico",
+  website: "https://www.nrj.fr/"
+},
+{
+  id: "fip-france",
+  name: "FIP",
+  country: "France",
+  language: "Instrumental",
+  genre: "Éclectique, Jazz, Rock, Classique, Musiques du monde",
+  streamUrl: "https://icecast.radiofrance.fr/fip-midfi.mp3",
+  logoUrl: "https://www.radiofrance.fr/favicon.ico",
+  website: "https://www.radiofrance.fr/fip"
+},
 
   {
     id: "nightride-fm",
@@ -153,14 +202,95 @@ website: "https://www.radiofrance.fr/franceculture"
     logoUrl: "https://www.google.com/s2/favicons?domain=radioswissclassic.ch&sz=128",
     website: "https://radioswissclassic.ch/"
   },
+  
   {
-    id: "kexp-seattle",
-    name: "KEXP",
-    country: "United States",
-    language: "English",
-    genre: "Alternative, Indie Rock",
-    streamUrl: "https://kexp.streamguys1.com/kexp160.aac",
-    logoUrl: "https://kexp.org/favicon.ico",
-    website: "https://www.kexp.org/"
-  }
+  id: "bbc-radio-1",
+  name: "BBC Radio 1",
+  country: "United Kingdom",
+  language: "English",
+  genre: "Pop, New Music, Contemporary",
+  streamUrl: "https://stream.live.vc.bbcmedia.co.uk/bbc_radio_one",
+  logoUrl: "https://www.bbc.co.uk/favicon.ico",
+  website: "https://www.bbc.co.uk/sounds/play/live/bbc_radio_one"
+},
+{
+  id: "bbc-radio-2",
+  name: "BBC Radio 2",
+  country: "United Kingdom",
+  language: "English",
+  genre: "Pop, Adult Contemporary, Entertainment",
+  streamUrl: "https://stream.live.vc.bbcmedia.co.uk/bbc_radio_two",
+  logoUrl: "https://www.bbc.co.uk/favicon.ico",
+  website: "https://www.bbc.co.uk/sounds/play/live/bbc_radio_two"
+},
+{
+  id: "bbc-radio-3",
+  name: "BBC Radio 3",
+  country: "United Kingdom",
+  language: "English",
+  genre: "Classical, Opera, Concerts",
+  streamUrl: "https://stream.live.vc.bbcmedia.co.uk/bbc_radio_three",
+  logoUrl: "https://www.bbc.co.uk/favicon.ico",
+  website: "https://www.bbc.co.uk/sounds/play/live/bbc_radio_three"
+},
+{
+  id: "bbc-world-service",
+  name: "BBC World Service",
+  country: "United Kingdom",
+  language: "English",
+  genre: "International News, Current Affairs",
+  streamUrl: "https://stream.live.vc.bbcmedia.co.uk/bbc_world_service",
+  logoUrl: "https://www.bbc.co.uk/favicon.ico",
+  website: "https://www.bbc.co.uk/sounds/play/live/bbc_world_service"
+},
+{
+  id: "classic-fm-uk",
+  name: "Classic FM",
+  country: "United Kingdom",
+  language: "English",
+  genre: "Classical, Film Scores, Orchestral",
+  streamUrl: "https://media-ssl.musicradio.com/ClassicFM",
+  logoUrl: "https://www.classicfm.com/favicon.ico",
+  website: "https://www.globalplayer.com/live/classicfm/"
+},
+{
+  id: "kexp-seattle",
+  name: "KEXP",
+  country: "United States",
+  language: "English",
+  genre: "Alternative Rock, Indie, Music Discovery",
+  streamUrl: "https://kexp.streamguys1.com/kexp160.aac",
+  logoUrl: "https://kexp.org/favicon.ico",
+  website: "https://kexp.org/"
+},
+{
+  id: "radio-paradise",
+  name: "Radio Paradise",
+  country: "United States",
+  language: "English",
+  genre: "Rock, Pop, Eclectic, Album Music",
+  streamUrl: "https://stream.radioparadise.com/mp3-128",
+  logoUrl: "https://radioparadise.com/favicon.ico",
+  website: "https://radioparadise.com/"
+},
+{
+  id: "deutschlandfunk",
+  name: "Deutschlandfunk",
+  country: "Allemagne",
+  language: "Allemand",
+  genre: "Actualités, Analyses, Débats",
+  streamUrl: "https://st01.sslstream.dlf.de/dlf/01/128/mp3/stream.mp3",
+  logoUrl: "https://www.deutschlandfunk.de/favicon.ico",
+  website: "https://www.deutschlandfunk.de/"
+},
+{
+  id: "radio-swiss-classic",
+  name: "Radio Swiss Classic",
+  country: "Suisse",
+  language: "Principalement musicale",
+  genre: "Musique classique, Instrumental, Détente",
+  streamUrl: "https://stream.srg-ssr.ch/srgssr/rsc_de/mp3/128",
+  logoUrl: "https://www.radioswissclassic.ch/favicon.ico",
+  website: "https://www.radioswissclassic.ch/"
+}
 ];
