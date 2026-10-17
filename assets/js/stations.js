@@ -33,7 +33,7 @@ window.STATIONS = [
     language: "Arabe",
     genre: "Musique arabo-andalouse",
     streamUrl: "https://medinaandalou.ice.infomaniak.ch/medinaandalou-128.mp3",
-    logoUrl: "https://www.google.com/s2/favicons?domain=medinafm.ma&sz=128",
+    logoUrl: "https://www.google.com/s2/favicons?domain=medinafm.ma/radio/medina-andalou&sz=128",
     website: "https://medinafm.ma/radio/medina-andalou"
   },
   {
