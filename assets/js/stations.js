@@ -73,7 +73,7 @@ window.STATIONS = [
   id: "hotmix-sport-workout",
   name: "Hotmix Sport Workout",
   country: "France",
-  language: "Instrumental / International",
+  language: "",
   genre: "Sport, fitness et musique énergique",
   streamUrl: "https://streaming.hotmixradio.com/hotmix-sport-plus-en-mp3",
   logoUrl: "https://www.google.com/s2/favicons?domain=www.hotmixradio.com&sz=128",
