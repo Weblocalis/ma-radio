@@ -16,47 +16,47 @@
  */
 
 window.STATIONS = [
-  {
-    id: "tarab-radio",
-    name: "Tarab Radio",
-    country: "Maroc",
-    language: "Arabe",
-    genre: "Tarab arabe classique",
-    streamUrl: "https://stream.zeno.fm/fy8achbq97zuv",
-    logoUrl: "https://www.google.com/s2/favicons?domain=www.tarabradio.ma&sz=128",
-    website: "https://www.tarabradio.ma/"
-  },
-  {
-    id: "medina-fm-andalou",
-    name: "Medina FM Andalou",
-    country: "Maroc",
-    language: "Arabe",
-    genre: "Musique arabo-andalouse",
-    streamUrl: "https://medinaandalou.ice.infomaniak.ch/medinaandalou-128.mp3",
-    logoUrl: "https://www.google.com/s2/favicons?domain=medinafm.ma/radio/medina-andalou&sz=128",
-    website: "https://medinafm.ma/radio/medina-andalou"
-  },
-  {
-    id: "medina-fm-tarab",
-    name: "Medina FM Tarab",
-    country: "Maroc",
-    language: "Arabe",
-    genre: "Tarab oriental classique",
-    streamUrl: "https://medinatarab.ice.infomaniak.ch/medinatarab-128.mp3",
-    logoUrl: "https://www.google.com/s2/favicons?domain=medinafm.ma&sz=128",
-    website: "https://medinafm.ma/"
-  },
-  
-  {
-    id: "quran-shuraim",
-    name: "Coran — Saoud Al-Shuraim",
-    country: "Arabie saoudite",
-    language: "Arabe",
-    genre: "Récitation du Coran",
-    streamUrl: "https://radio.mp3islam.com/listen/alshuraim/radio.mp3",
-    logoUrl: "https://www.google.com/s2/favicons?domain=mp3islam.com&sz=128",
-    website: "https://qurangallery.com/listen/fr/radio/radio-saud-al-shuraim"
-  },
+
+{
+  id: "quran-shuraim",
+  name: "Quran — Saud Al-Shuraim",
+  country: "Saudi Arabia",
+  language: "Arabic",
+  genre: "Quran Recitation",
+  streamUrl: "https://radio.mp3islam.com/listen/alshuraim/radio.mp3",
+  logoUrl: "https://www.google.com/s2/favicons?domain=mp3islam.com&sz=128",
+  website: "https://qurangallery.com/listen/fr/radio/radio-saud-al-shuraim"
+},
+{
+  id: "tarab-radio",
+  name: "Tarab Radio",
+  country: "Morocco",
+  language: "Arabic",
+  genre: "Classic Arabic Tarab",
+  streamUrl: "https://stream.zeno.fm/fy8achbq97zuv",
+  logoUrl: "https://www.google.com/s2/favicons?domain=www.tarabradio.ma&sz=128",
+  website: "https://www.tarabradio.ma/"
+},
+{
+  id: "medina-fm-andalou",
+  name: "Medina FM Andalou",
+  country: "Morocco",
+  language: "Arabic",
+  genre: "Arab-Andalusian Music",
+  streamUrl: "https://medinaandalou.ice.infomaniak.ch/medinaandalou-128.mp3",
+  logoUrl: "https://www.google.com/s2/favicons?domain=medinafm.ma/radio/medina-andalou&sz=128",
+  website: "https://medinafm.ma/radio/medina-andalou"
+},
+{
+  id: "medina-fm-tarab",
+  name: "Medina FM Tarab",
+  country: "Morocco",
+  language: "Arabic",
+  genre: "Classic Oriental Tarab",
+  streamUrl: "https://medinatarab.ice.infomaniak.ch/medinatarab-128.mp3",
+  logoUrl: "https://www.google.com/s2/favicons?domain=medinafm.ma&sz=128",
+  website: "https://medinafm.ma/"
+},
   
 {
   id: "france-musique-classique-plus",
@@ -74,7 +74,7 @@ window.STATIONS = [
   name: "Hotmix Sport Workout",
   country: "France",
   language: "",
-  genre: "Sport, fitness et musique énergique",
+  genre: "Sports, Fitness & Energetic Music",
   streamUrl: "https://streaming.hotmixradio.com/hotmix-sport-plus-en-mp3",
   logoUrl: "https://www.google.com/s2/favicons?domain=www.hotmixradio.com&sz=128",
   website: "https://www.hotmixradio.com/"
@@ -245,9 +245,9 @@ website: "https://www.radiofrance.fr/franceculture"
 {
   id: "deutschlandfunk",
   name: "Deutschlandfunk",
-  country: "Allemagne",
-  language: "Allemand",
-  genre: "Actualités, Analyses, Débats",
+  country: "Germany",
+  language: "German",
+  genre: "News, Analysis & Debates",
   streamUrl: "https://st01.sslstream.dlf.de/dlf/01/128/mp3/stream.mp3",
   logoUrl: "https://www.google.com/s2/favicons?domain=www.deutschlandfunk.de&sz=128",
   website: "https://www.deutschlandfunk.de/"
@@ -255,9 +255,9 @@ website: "https://www.radiofrance.fr/franceculture"
 {
   id: "radio-swiss-classic",
   name: "Radio Swiss Classic",
-  country: "Suisse",
-  language: "Principalement musicale",
-  genre: "Musique classique, Instrumental, Détente",
+  country: "Switzerland",
+  language: "Mostly Instrumental",
+  genre: "Classical Music, Instrumental, Relaxation",
   streamUrl: "https://stream.srg-ssr.ch/srgssr/rsc_de/mp3/128",
   logoUrl: "https://www.google.com/s2/favicons?domain=www.radioswissclassic.ch&sz=128",
   website: "https://www.radioswissclassic.ch/"
