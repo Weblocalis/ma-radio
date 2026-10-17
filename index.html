@@ -182,12 +182,14 @@
       <div class="d-flex align-items-center gap-3">
         <div id="player-logo" class="logo logo-lg" aria-hidden="true"><i class="bi bi-broadcast"></i></div>
         <div class="flex-grow-1 min-w-0">
-          <div id="player-name" class="fw-semibold text-truncate">Aucune station sélectionnée</div>
-          <div class="small text-muted-ui d-flex align-items-center gap-2" role="status" aria-live="polite">
-            <span id="status-dot" class="status-dot status-idle" aria-hidden="true"></span>
-            <span id="status-text" class="text-truncate">Choisis une station dans la liste</span>
-            <span id="player-eq" class="eq" aria-hidden="true"><span></span><span></span><span></span></span>
-          </div>
+
+<div id="player-name" class="fw-semibold text-truncate">No station selected</div>
+<div class="small text-muted-ui d-flex align-items-center gap-2" role="status" aria-live="polite">
+  <span id="status-dot" class="status-dot status-idle" aria-hidden="true"></span>
+  <span id="status-text" class="text-truncate">Choose a station from the list</span>
+  <span id="player-eq" class="eq" aria-hidden="true"><span></span><span></span><span></span></span>
+</div>
+          
         </div>
         <button id="btn-retry" type="button" class="btn btn-outline-secondary btn-icon d-none"
                 title="Relancer le flux" aria-label="Relancer le flux">
@@ -228,10 +230,12 @@
 
   <!-- Paramètres (volet du bas, accessible au pouce) -->
   <div class="offcanvas offcanvas-bottom settings-panel" tabindex="-1" id="settings-panel" aria-labelledby="settings-title">
-    <div class="offcanvas-header">
-      <h2 class="offcanvas-title h5" id="settings-title">Paramètres</h2>
-      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Fermer"></button>
-    </div>
+
+<div class="offcanvas-header">
+  <h2 class="offcanvas-title h5" id="settings-title">Settings</h2>
+  <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+</div>
+    
     <div class="offcanvas-body">
       <fieldset>
         <legend class="h6">Thème</legend>
