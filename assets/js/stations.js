@@ -23,7 +23,7 @@ window.STATIONS = [
     language: "Arabe",
     genre: "Tarab arabe classique",
     streamUrl: "https://stream.zeno.fm/fy8achbq97zuv",
-    logoUrl: "https://www.google.com/s2/favicons?domain=tarabradio.ma&sz=128",
+    logoUrl: "https://www.google.com/s2/favicons?domain=www.tarabradio.ma&sz=128",
     website: "https://www.tarabradio.ma/"
   },
   {
@@ -106,7 +106,7 @@ website: "https://www.radiofrance.fr/franceculture"
   country: "France",
   language: "Français",
   genre: "Généraliste, Actualités, Divertissement",
-  streamUrl: "https://streaming.radio.rtl.fr/rtl-1-44-96",
+  streamUrl: "https://icecast.rtl.fr/rtl-1-44-128",
   logoUrl: "https://www.google.com/s2/favicons?domain=www.rtl.fr&sz=128",
   website: "https://www.rtl.fr/direct"
 },
