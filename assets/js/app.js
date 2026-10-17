@@ -25,38 +25,42 @@
    * Rien n'est recopié depuis le catalogue : les stations de stations.js sont classées d'après leur genre et leur nom
    * (mots-clés ci-dessous, comparés sans accents ni majuscules). Une catégorie sans station n'est pas affichée.
    * Une station peut aussi imposer ses thèmes avec un champ facultatif dans stations.js : themes: ["focus", "work"]. */
-  const THEMES = [
-    { id: 'focus', title: 'Concentration et programmation', desc: 'Ambient, électro calme, lo-fi', icon: 'bi-code-slash',
-      match: 'ambient|concentration|lo-?fi|chillhop|chillsynth|synthwave|idm|glitch|programmation|informatique|hacking|drone' },
-    { id: 'work', title: 'Travail et productivité', desc: 'Classique, jazz, instrumental', icon: 'bi-briefcase',
-      match: 'musique classique|^classique \\||orchestr|jazz|instrumental|lo-?fi|chill|downtempo|ambient' },
-    { id: 'sport', title: 'Sport et fitness', desc: 'De l’énergie pour bouger', icon: 'bi-lightning-charge-fill',
-      match: 'sport|fitness|workout|energique|dance|running' },
-    { id: 'relax', title: 'Détente et relaxation', desc: 'Pour souffler', icon: 'bi-cup-hot',
-      match: 'relax|detente|chill|downtempo|lounge|tarab|andalou|musique classique|^classique \\||orchestr|jazz|ambient' },
-    { id: 'sleep', title: 'Sommeil et ambiance calme', desc: 'Sons doux et lents', icon: 'bi-moon-stars',
-      match: 'sommeil|sleep|calme|ambient|drone|deep space' },
-    { id: 'drive', title: 'Conduite et voyage', desc: 'Pour la route', icon: 'bi-car-front-fill',
-      match: '\\bpop\\b|\\brock\\b|route|voyage|conduite|synthwave|outrun|retrowave|dance|eclectique|variete|electro' },
-    { id: 'discover', title: 'Découverte musicale', desc: 'Éclectique et du monde', icon: 'bi-compass',
-      match: 'eclectique|decouverte|monde|world|tarab|andalou|oriental|vaporwave|idm|space disco' },
-    { id: 'news', title: 'Actualités et information', desc: 'Info, débats et culture', icon: 'bi-newspaper',
-      match: 'information|actualit|news|journal|generaliste|culture|sciences|philosophie|idees|debat' }
-  ];
-  const FAMILIES = [
-    { id: 'ambient', label: 'Ambient', icon: 'bi-cloud-haze2', match: 'ambient|drone' },
-    { id: 'lofi', label: 'Lo-fi et chillhop', icon: 'bi-headphones', match: 'lo-?fi|chillhop|hip-?hop' },
-    { id: 'electro', label: 'Électro et synthwave', icon: 'bi-soundwave',
-      match: 'electro|synthwave|idm|vaporwave|chillsynth|techno|house|edm|glitch|space disco|cyberpunk' },
-    { id: 'classique', label: 'Classique et orchestral', icon: 'bi-music-note-list', match: '^classique$|musique classique|orchestr|symphon|opera' },
-    { id: 'jazz', label: 'Jazz', icon: 'bi-music-note', match: 'jazz' },
-    { id: 'rock', label: 'Rock', icon: 'bi-speaker', match: '\\brock\\b|metal' },
-    { id: 'pop', label: 'Pop', icon: 'bi-stars', match: '\\bpop\\b' },
-    { id: 'monde', label: 'Musiques du monde', icon: 'bi-globe-europe-africa',
-      match: 'monde|world|tarab|arabo|andalou|oriental|flamenco|gnawa|reggae|latin|afro|celtique' },
-    { id: 'instru', label: 'Instrumental et relaxation', icon: 'bi-feather',
-      match: 'instrumental|relax|detente|chill|downtempo|lounge|sommeil|calme' }
-  ];
+
+const THEMES = [
+  { id: 'focus', title: 'Focus and Coding', desc: 'Ambient, mellow electronic, lo-fi', icon: 'bi-code-slash',
+    match: 'ambient|concentration|lo-?fi|chillhop|chillsynth|synthwave|idm|glitch|programmation|informatique|hacking|drone' },
+  { id: 'work', title: 'Work and Productivity', desc: 'Classical, jazz, instrumental', icon: 'bi-briefcase',
+    match: 'musique classique|^classique \\||orchestr|jazz|instrumental|lo-?fi|chill|downtempo|ambient' },
+  { id: 'sport', title: 'Sports and Fitness', desc: 'Energy to keep you moving', icon: 'bi-lightning-charge-fill',
+    match: 'sport|fitness|workout|energique|dance|running' },
+  { id: 'relax', title: 'Relaxation and Unwinding', desc: 'Take a moment to unwind', icon: 'bi-cup-hot',
+    match: 'relax|detente|chill|downtempo|lounge|tarab|andalou|musique classique|^classique \\||orchestr|jazz|ambient' },
+  { id: 'sleep', title: 'Sleep and Calm Ambience', desc: 'Soft and soothing sounds', icon: 'bi-moon-stars',
+    match: 'sommeil|sleep|calme|ambient|drone|deep space' },
+  { id: 'drive', title: 'Driving and Travel', desc: 'Your soundtrack for the road', icon: 'bi-car-front-fill',
+    match: '\\bpop\\b|\\brock\\b|route|voyage|conduite|synthwave|outrun|retrowave|dance|eclectique|variete|electro' },
+  { id: 'discover', title: 'Discover New Music', desc: 'Eclectic sounds from around the world', icon: 'bi-compass',
+    match: 'eclectique|decouverte|monde|world|tarab|andalou|oriental|vaporwave|idm|space disco' },
+  { id: 'news', title: 'News and Information', desc: 'News, debate and culture', icon: 'bi-newspaper',
+    match: 'information|actualit|news|journal|generaliste|culture|sciences|philosophie|idees|debat' }
+];
+  
+
+const FAMILIES = [
+  { id: 'ambient', label: 'Ambient', icon: 'bi-cloud-haze2', match: 'ambient|drone' },
+  { id: 'lofi', label: 'Lo-fi and Chillhop', icon: 'bi-headphones', match: 'lo-?fi|chillhop|hip-?hop' },
+  { id: 'electro', label: 'Electronic and Synthwave', icon: 'bi-soundwave',
+    match: 'electro|synthwave|idm|vaporwave|chillsynth|techno|house|edm|glitch|space disco|cyberpunk' },
+  { id: 'classique', label: 'Classical and Orchestral', icon: 'bi-music-note-list', match: '^classique$|musique classique|orchestr|symphon|opera' },
+  { id: 'jazz', label: 'Jazz', icon: 'bi-music-note', match: 'jazz' },
+  { id: 'rock', label: 'Rock', icon: 'bi-speaker', match: '\\brock\\b|metal' },
+  { id: 'pop', label: 'Pop', icon: 'bi-stars', match: '\\bpop\\b' },
+  { id: 'monde', label: 'World Music', icon: 'bi-globe-europe-africa',
+    match: 'monde|world|tarab|arabo|andalou|oriental|flamenco|gnawa|reggae|latin|afro|celtique' },
+  { id: 'instru', label: 'Instrumental and Relaxation', icon: 'bi-feather',
+    match: 'instrumental|relax|detente|chill|downtempo|lounge|sommeil|calme' }
+];
+  
   THEMES.forEach((t) => { t.re = new RegExp(t.match); });
   FAMILIES.forEach((f) => { f.re = new RegExp(f.match); });
   const THEME_BY_ID = new Map(THEMES.map((t) => [t.id, t]));
