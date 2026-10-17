@@ -299,19 +299,9 @@ website: "https://www.radiofrance.fr/franceculture"
   country: "France",
   language: "Français",
   genre: "Variété française, hits rétro",
-  streamUrl: "",
-  logoUrl: "",
+  streamUrl: "https://streaming.nrjaudio.fm/oug7girb92oc",
+  logoUrl: "https://www.google.com/s2/favicons?domain=nostalgie.fr&sz=128",
   website: "https://www.nostalgie.fr/"
-},
-{
-  id: "skyrock-fr",
-  name: "Skyrock",
-  country: "France",
-  language: "Français",
-  genre: "Rap, hip-hop",
-  streamUrl: "",
-  logoUrl: "",
-  website: "https://skyrock.fm/"
 },
 {
   id: "fun-radio-fr",
@@ -319,8 +309,8 @@ website: "https://www.radiofrance.fr/franceculture"
   country: "France",
   language: "Français",
   genre: "Dance, électro, hits",
-  streamUrl: "",
-  logoUrl: "",
+  streamUrl: "https://icecast.funradio.fr/fun-1-44-128",
+  logoUrl: "https://www.google.com/s2/favicons?domain=funradio.fr&sz=128",
   website: "https://www.funradio.fr/"
 },
 {
@@ -329,8 +319,8 @@ website: "https://www.radiofrance.fr/franceculture"
   country: "Espagne",
   language: "Espagnol",
   genre: "Pop, hits espagnols et internationaux",
-  streamUrl: "",
-  logoUrl: "",
+  streamUrl: "https://playerservices.streamtheworld.com/api/livestream-redirect/LOS40.mp3",
+  logoUrl: "https://www.google.com/s2/favicons?domain=los40.com&sz=128",
   website: "https://los40.com/"
 },
 {
@@ -339,8 +329,8 @@ website: "https://www.radiofrance.fr/franceculture"
   country: "Espagne",
   language: "Espagnol",
   genre: "Actualités, débats, sport",
-  streamUrl: "",
-  logoUrl: "",
+  streamUrl: "https://playerservices.streamtheworld.com/api/livestream-redirect/CADENASER.mp3",
+  logoUrl: "https://www.google.com/s2/favicons?domain=cadenaser.com&sz=128",
   website: "https://cadenaser.com/"
 },
 {
@@ -349,8 +339,8 @@ website: "https://www.radiofrance.fr/franceculture"
   country: "Espagne",
   language: "Espagnol",
   genre: "Actualités, débats, sport",
-  streamUrl: "",
-  logoUrl: "",
+  streamUrl: "https://madrid-cope-rrcast.flumotion.com/cope/madrid.mp3",
+  logoUrl: "https://www.google.com/s2/favicons?domain=cope.es&sz=128",
   website: "https://www.cope.es/"
 },
 {
@@ -443,14 +433,5 @@ website: "https://www.radiofrance.fr/franceculture"
   logoUrl: "",
   website: "https://radio.nrk.no/"
 },
-{
-  id: "somafm-secret-agent",
-  name: "SomaFM Secret Agent",
-  country: "États-Unis",
-  language: "Instrumental",
-  genre: "Bandes originales, espionnage, cinéma",
-  streamUrl: "https://ice2.somafm.com/secretagent-128-mp3",
-  logoUrl: "https://somafm.com/img3/secretagent-400.jpg",
-  website: "https://somafm.com/secretagent/"
-}
+
 ];
