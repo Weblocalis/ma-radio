@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="fr" data-bs-theme="dark">
+<html lang="en" data-bs-theme="dark">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Ma Radio</title>
-  <meta name="description" content="Lecteur radio Internet personnel : écoute tes stations préférées depuis ton téléphone, ta tablette ou ton ordinateur.">
+  <title>Omnira - Your World of Radio.</title>
+  <meta name="description" content="Discover Omnira, your international radio player. Listen to radio stations from around the world, explore music genres and languages, and enjoy your favorite stations in one place.">
   <meta name="theme-color" content="#0f1216">
   <script>
     /* Applique le thème AVANT le premier affichage (évite le flash du mauvais thème). Même logique que app.js. */
@@ -39,7 +39,7 @@
       <div class="d-flex flex-wrap align-items-center gap-2">
         <a href="#accueil" class="d-flex align-items-center gap-2 text-decoration-none text-reset me-md-3" aria-label="Ma Radio, retour à l'accueil">
           <i class="bi bi-broadcast fs-3 text-accent" aria-hidden="true"></i>
-          <h1 class="h5 mb-0">Ma Radio</h1>
+          <h1 class="h5 mb-0">Omnira</h1>
         </a>
         <div class="input-group search-group order-3 order-md-2">
           <span class="input-group-text" aria-hidden="true"><i class="bi bi-search"></i></span>
@@ -56,62 +56,70 @@
   </header>
 
   <main class="container py-3">
-    <noscript>
-      <div class="alert alert-warning">JavaScript est nécessaire pour utiliser le lecteur radio.</div>
-    </noscript>
 
-    <div id="storage-warning" class="alert alert-warning alert-dismissible d-none" role="alert">
-      Le stockage local du navigateur est indisponible : les favoris, l'historique et les réglages ne seront pas conservés après la fermeture.
-      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Fermer"></button>
-    </div>
+
+<noscript>
+  <div class="alert alert-warning">JavaScript is required to use the radio player.</div>
+</noscript>
+
+<div id="storage-warning" class="alert alert-warning alert-dismissible d-none" role="alert">
+  Your browser's local storage is unavailable: favorites, listening history, and settings will not be saved after you close the browser.
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+
 
     <!-- ===== Vue Accueil : sections générées par app.js à partir de stations.js ===== -->
     <div id="home-view">
       <p id="home-empty" class="text-center text-muted-ui py-5 d-none"></p>
 
-      <section id="home-recents" class="home-section d-none" aria-labelledby="h-recents">
-        <div class="d-flex align-items-center justify-content-between mb-2">
-          <h2 id="h-recents" class="section-title">Dernières écoutes</h2>
-          <button type="button" id="btn-clear-history" class="btn btn-sm btn-link text-muted-ui">Effacer</button>
-        </div>
-        <div id="recents-list" class="row g-2 row-cols-1 row-cols-md-2 row-cols-xl-3"></div>
-      </section>
 
-      <section id="home-picks" class="home-section d-none" aria-labelledby="h-picks">
-        <h2 id="h-picks" class="section-title">À découvrir</h2>
-        <p class="small text-muted-ui mb-2">Sélection du jour tirée de ton catalogue (aucune statistique d'écoute).</p>
-        <div id="picks-list" class="row g-2 row-cols-1 row-cols-md-2 row-cols-xl-3"></div>
-      </section>
+<section id="home-recents" class="home-section d-none" aria-labelledby="h-recents">
+  <div class="d-flex align-items-center justify-content-between mb-2">
+    <h2 id="h-recents" class="section-title">Recently Played</h2>
+    <button type="button" id="btn-clear-history" class="btn btn-sm btn-link text-muted-ui">Clear</button>
+  </div>
+  <div id="recents-list" class="row g-2 row-cols-1 row-cols-md-2 row-cols-xl-3"></div>
+</section>
 
-      <section id="home-themes" class="home-section d-none" aria-labelledby="h-themes">
-        <h2 id="h-themes" class="section-title">Écouter selon son activité</h2>
-        <div id="themes-list" class="row g-2 row-cols-2 row-cols-md-3 row-cols-xl-4"></div>
-      </section>
 
-      <section id="home-genres" class="home-section d-none" aria-labelledby="h-genres">
-        <h2 id="h-genres" class="section-title">Découvrir par genre</h2>
-        <div id="genres-list" class="row g-2 row-cols-2 row-cols-md-3 row-cols-xl-4"></div>
-      </section>
+<section id="home-picks" class="home-section d-none" aria-labelledby="h-picks">
+  <h2 id="h-picks" class="section-title">Discover</h2>
+  <p class="small text-muted-ui mb-2">Today's picks from your catalog (no listening statistics used).</p>
+  <div id="picks-list" class="row g-2 row-cols-1 row-cols-md-2 row-cols-xl-3"></div>
+</section>
 
-      <section id="home-countries" class="home-section d-none" aria-labelledby="h-countries">
-        <h2 id="h-countries" class="section-title">Explorer par pays</h2>
-        <div id="countries-list" class="row g-2 row-cols-2 row-cols-md-3 row-cols-xl-4"></div>
-      </section>
+<section id="home-themes" class="home-section d-none" aria-labelledby="h-themes">
+  <h2 id="h-themes" class="section-title">Listen by Activity</h2>
+  <div id="themes-list" class="row g-2 row-cols-2 row-cols-md-3 row-cols-xl-4"></div>
+</section>
 
-      <section id="home-languages" class="home-section d-none" aria-labelledby="h-languages">
-        <h2 id="h-languages" class="section-title">Écouter dans une langue</h2>
-        <div id="languages-list" class="row g-2 row-cols-2 row-cols-md-3 row-cols-xl-4"></div>
-      </section>
+<section id="home-genres" class="home-section d-none" aria-labelledby="h-genres">
+  <h2 id="h-genres" class="section-title">Explore by Genre</h2>
+  <div id="genres-list" class="row g-2 row-cols-2 row-cols-md-3 row-cols-xl-4"></div>
+</section>
+
+<section id="home-countries" class="home-section d-none" aria-labelledby="h-countries">
+  <h2 id="h-countries" class="section-title">Explore by Country</h2>
+  <div id="countries-list" class="row g-2 row-cols-2 row-cols-md-3 row-cols-xl-4"></div>
+</section>
+
+<section id="home-languages" class="home-section d-none" aria-labelledby="h-languages">
+  <h2 id="h-languages" class="section-title">Listen by Language</h2>
+  <div id="languages-list" class="row g-2 row-cols-2 row-cols-md-3 row-cols-xl-4"></div>
+</section>
+
+      
     </div>
 
     <!-- ===== Vues Radios (catalogue filtrable) et Favoris ===== -->
     <div id="catalog-view" class="d-none">
-      <div class="d-flex align-items-center gap-2 mb-3">
-        <a id="btn-back-home" href="#accueil" class="btn btn-outline-secondary btn-touch d-inline-flex align-items-center gap-1">
-          <i class="bi bi-arrow-left" aria-hidden="true"></i><span>Accueil</span>
-        </a>
-        <h2 id="view-title" class="h5 mb-0 text-truncate">Toutes les stations</h2>
-      </div>
+
+<div class="d-flex align-items-center gap-2 mb-3">
+  <a id="btn-back-home" href="#accueil" class="btn btn-outline-secondary btn-touch d-inline-flex align-items-center gap-1">
+    <i class="bi bi-arrow-left" aria-hidden="true"></i><span>Home</span>
+  </a>
+  <h2 id="view-title" class="h5 mb-0 text-truncate">All Stations</h2>
+</div>      
 
       <div id="active-chips" class="d-flex flex-wrap gap-2 mb-2 d-none"></div>
 
@@ -119,48 +127,52 @@
         <!-- Sur mobile, les filtres sont repliables ; sur ordinateur ils sont toujours visibles -->
         <button class="btn btn-outline-secondary d-md-none w-100 mb-2 btn-touch" type="button"
                 data-bs-toggle="collapse" data-bs-target="#filters" aria-expanded="false" aria-controls="filters">
-          <i class="bi bi-sliders" aria-hidden="true"></i> Filtres
+          <i class="bi bi-sliders" aria-hidden="true"></i> Filters
         </button>
 
         <div class="collapse d-md-block" id="filters">
-          <div class="row g-2">
-            <div class="col-12 col-md-4">
-              <label for="filter-country" class="visually-hidden">Pays</label>
-              <select id="filter-country" class="form-select btn-touch"></select>
-            </div>
-            <div class="col-12 col-md-4">
-              <label for="filter-language" class="visually-hidden">Langue</label>
-              <select id="filter-language" class="form-select btn-touch"></select>
-            </div>
-            <div class="col-12 col-md-4">
-              <label for="filter-genre" class="visually-hidden">Genre</label>
-              <select id="filter-genre" class="form-select btn-touch"></select>
-            </div>
-          </div>
-          <div class="d-flex flex-wrap gap-2 mt-2">
-            <button type="button" id="btn-reset" class="btn btn-outline-secondary btn-touch">
-              <i class="bi bi-x-circle" aria-hidden="true"></i> Réinitialiser
-            </button>
-          </div>
+
+<div class="row g-2">
+  <div class="col-12 col-md-4">
+    <label for="filter-country" class="visually-hidden">Country</label>
+    <select id="filter-country" class="form-select btn-touch"></select>
+  </div>
+  <div class="col-12 col-md-4">
+    <label for="filter-language" class="visually-hidden">Language</label>
+    <select id="filter-language" class="form-select btn-touch"></select>
+  </div>
+  <div class="col-12 col-md-4">
+    <label for="filter-genre" class="visually-hidden">Genre</label>
+    <select id="filter-genre" class="form-select btn-touch"></select>
+  </div>
+</div>
+<div class="d-flex flex-wrap gap-2 mt-2">
+  <button type="button" id="btn-reset" class="btn btn-outline-secondary btn-touch">
+    <i class="bi bi-x-circle" aria-hidden="true"></i> Reset
+  </button>
+</div>
+          
         </div>
       </section>
 
       <p id="result-count" class="text-muted-ui small my-3" role="status" aria-live="polite"></p>
 
       <!-- Vue Favoris : favoris dont la station n'existe plus dans le catalogue -->
-      <div id="orphans-notice" class="alert alert-warning d-flex flex-wrap align-items-center gap-2 d-none" role="status">
-        <span id="orphans-text" class="flex-grow-1"></span>
-        <button type="button" id="btn-forget-orphans" class="btn btn-sm btn-outline-warning">Oublier</button>
-      </div>
 
-      <section aria-label="Liste des stations">
-        <div id="station-list" class="row g-2 row-cols-1 row-cols-md-2 row-cols-xl-3"></div>
-        <div id="empty-state" class="text-center text-muted-ui py-5 d-none">
-          <i id="empty-icon" class="bi bi-heart fs-1 d-block mb-2" aria-hidden="true"></i>
-          <p id="empty-text" class="mb-3"></p>
-          <a id="empty-action" href="#radios" class="btn btn-accent btn-touch d-none">Parcourir les radios</a>
-        </div>
-      </section>
+<div id="orphans-notice" class="alert alert-warning d-flex flex-wrap align-items-center gap-2 d-none" role="status">
+  <span id="orphans-text" class="flex-grow-1"></span>
+  <button type="button" id="btn-forget-orphans" class="btn btn-sm btn-outline-warning">Forget</button>
+</div>
+
+<section aria-label="Station list">
+  <div id="station-list" class="row g-2 row-cols-1 row-cols-md-2 row-cols-xl-3"></div>
+  <div id="empty-state" class="text-center text-muted-ui py-5 d-none">
+    <i id="empty-icon" class="bi bi-heart fs-1 d-block mb-2" aria-hidden="true"></i>
+    <p id="empty-text" class="mb-3"></p>
+    <a id="empty-action" href="#radios" class="btn btn-accent btn-touch d-none">Browse Stations</a>
+  </div>
+</section>
+      
     </div>
   </main>
 
@@ -194,21 +206,23 @@
       </div>
 
       <!-- Navigation entre les vues : le lecteur ci-dessus reste en place, la lecture n'est jamais interrompue -->
-      <nav class="bottom-nav" aria-label="Navigation principale">
-        <a id="nav-home" href="#accueil" class="nav-item-btn" aria-current="page">
-          <i class="bi bi-house-door" aria-hidden="true"></i><span>Accueil</span>
-        </a>
-        <a id="nav-radios" href="#radios" class="nav-item-btn">
-          <i class="bi bi-broadcast" aria-hidden="true"></i><span>Radios</span>
-        </a>
-        <a id="nav-favorites" href="#favoris" class="nav-item-btn">
-          <i class="bi bi-heart" aria-hidden="true"></i><span>Favoris</span>
-          <span id="fav-badge" class="nav-badge d-none" aria-hidden="true">0</span>
-        </a>
-        <button id="nav-current" type="button" class="nav-item-btn" disabled>
-          <i class="bi bi-music-note-beamed" aria-hidden="true"></i><span>En lecture</span>
-        </button>
-      </nav>
+
+<nav class="bottom-nav" aria-label="Main navigation">
+  <a id="nav-home" href="#accueil" class="nav-item-btn" aria-current="page">
+    <i class="bi bi-house-door" aria-hidden="true"></i><span>Home</span>
+  </a>
+  <a id="nav-radios" href="#radios" class="nav-item-btn">
+    <i class="bi bi-broadcast" aria-hidden="true"></i><span>Stations</span>
+  </a>
+  <a id="nav-favorites" href="#favoris" class="nav-item-btn">
+    <i class="bi bi-heart" aria-hidden="true"></i><span>Favorites</span>
+    <span id="fav-badge" class="nav-badge d-none" aria-hidden="true">0</span>
+  </a>
+  <button id="nav-current" type="button" class="nav-item-btn" disabled>
+    <i class="bi bi-music-note-beamed" aria-hidden="true"></i><span>Now Playing</span>
+  </button>
+</nav>
+      
     </div>
   </section>
 
